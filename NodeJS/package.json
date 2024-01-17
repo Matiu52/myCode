@@ -1,0 +1,18 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "belajar backend dengan nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "nyala": "nodemon index.js"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "matiusandreatna",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3",
+    "rupiah-format": "^1.0.0"
+  }
+}

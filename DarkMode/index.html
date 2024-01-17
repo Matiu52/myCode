@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Dark Mode</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="reRender()" id="home">HOME</a>
+            <a onclick="changeMode()" id="mode">MODE-DARK</a>
+            <a onclick="changeModeBerani()" id="modeBerani">MODE-BERANI</a>
+            <a onclick="changeModeKalem()" id="modeKalem">MODE-KALEM</a>
+        </nav>
+        <h1>MATIUS ANDREATNA</h1>
+        <p class="info" id="info"></p>
+    </div>
+
+    <!-- FUNGSI UNTUK DARK MODE -->
+    <script>
+        let body = document.body;
+        let info = document.getElementById("info");
+        let mode = document.getElementById("mode");
+        let home = document.getElementById("home");
+        let modeBerani = document.getElementById("modeBerani");
+        let modeKalem = document.getElementById("modeKalem");
+
+        const darkLimit = 5;
+        let darkCounter = 0;
+        let darkRemainingLeft = darkLimit;
+        let countBerani = 0;
+        let countKalem = 0;
+
+        function changeMode() {
+            if (darkRemainingLeft == 1) {
+                info.textContent = "💥JATAH FITUR DARKMODE ANDA SUDAH HABIS💥";
+                mode.style.display = "none";
+                home.textContent = "RESTART";
+                modeBerani.style.display = "none";
+                modeKalem.style.display = "none";
+                return;
+            }
+            darkCounter += 1;
+            if (darkCounter % 2 == 0) {
+                mode.textContent = "MODE-DARK";
+            } else {
+                mode.textContent = "MODE-LIGHT"
+            }
+            darkRemainingLeft = darkLimit - darkCounter;
+
+            //render ke info elemen
+            info.textContent = `Darkmode dipakai ${darkCounter}x, tersisa ${darkRemainingLeft}x.`;
+            body.classList.toggle("dark");
+        }
+
+        function changeModeBerani() {
+            if (countBerani % 2 == 0) {
+                mode.style.display = "none";
+                modeKalem.style.display = "none";
+            } else {
+                mode.style.display = "initial";
+                modeKalem.style.display = "initial";
+            }
+            body.classList.toggle("berani");
+            countBerani += 1;
+        }
+
+        function changeModeKalem() {
+            if (countKalem % 2 == 0) {
+                mode.style.display = "none";
+                modeBerani.style.display = "none";
+            } else {
+                mode.style.display = "initial";
+                modeBerani.style.display = "initial";
+            }
+            body.classList.toggle("kalem");
+            countKalem += 1;
+        }
+
+        function reRender() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
