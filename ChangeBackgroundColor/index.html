@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB BACKGROUND CHANGER</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="title" id="title">PILIH WARNA</div>
+        <div class="box">
+            <div class="circle red"></div>
+            <div class="circle blue"></div>
+            <div class="circle green"></div>
+            <div class="circle black"></div>
+            <div class="circle yellow"></div>
+            <div class="circle aqua"></div>
+            <div class="circle brown"></div>
+        </div>
+        <button onclick="reset()" class="btn" id="btnReset">RESET WARNA</button>
+    </div>
+    <script>
+        const circles = document.querySelectorAll(".circle")
+        const whiteColor = "rgb(255,255,255)";
+        const blackColor = "rgb(0,0,0)";
+
+        circles.forEach((circle) => {
+            circle.addEventListener("click", ({ target }) => {
+                const { backgroundColor } = getComputedStyle(target);
+                const title = document.getElementById("title");
+
+                document.body.style.backgroundColor = backgroundColor;
+                backgroundColor == "rgb(51, 51, 51)" ? title.style.color = whiteColor : title.style.color = blackColor;
+            });
+        });
+
+        const reset = () => {
+            document.body.style.backgroundColor = whiteColor;
+            document.getElementById("title").style.color = blackColor;
+        }
+    </script>
+</body>
+
+</html>
