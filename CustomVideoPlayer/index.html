@@ -1,0 +1,111 @@
+<style>
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 75%;
+        margin: 0 auto;
+        border: 5px solid crimson;
+        position: relative;
+    }
+
+    video {
+        display: block;
+        width: 100%;
+    }
+
+    .video-component {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 12px;
+    }
+
+    .btn {
+        border: none;
+        padding: 10px;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .btn-play {
+        background-color: crimson;
+        color: white;
+    }
+    .btn-play:hover {
+        background-color: rgb(221, 44, 79);
+        color: white;
+    }
+
+    .btn-pause:hover {
+        background-color: rgb(145, 145, 145);
+        color: black;
+    }
+
+    .btn-minimize {
+        background-color: #222222;
+        color: white;
+    }
+    .btn-minimize:hover {
+        background-color: #555454;
+        color: white;
+    }
+    .btn-fullscreen {
+        background-color: aqua;
+        color: white;
+    }
+    .btn-fullscreen:hover {
+        background-color: rgb(0, 153, 153);
+        color: white;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Video</title>
+</head>
+
+<body>
+    <div class="container">
+        <video width="720">
+            <source src="./assets/footage.mp4" type="video/mp4" />
+        </video>
+        <div class="video-component">
+            <button onclick="play()" class="btn btn-play">PLAY</button>
+            <button onclick="pause()" class="btn btn-pause">PAUSE</button>
+            <button onclick="minimize()" class="btn btn-minimize">MINIMIZE</button>
+            <button onclick="fullscreen()" class="btn btn-fullscreen">FULLSCREEN</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const videoComponent = document.querySelector("video");
+    function play() {
+        videoComponent.play()
+    }
+    function pause() {
+        videoComponent.pause()
+    }
+    function minimize() {
+        videoComponent.requestPictureInPicture()
+    }
+    function fullscreen(){
+        videoComponent.requestFullscreen()
+    }
+
+</script>
+
+</html>
