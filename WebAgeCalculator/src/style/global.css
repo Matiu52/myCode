@@ -1,0 +1,48 @@
+/*? global clearing */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 16px;
+    width: 500px;
+}
+
+#birthday {
+    padding: 16px;
+    background-color: tomato;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+}
+
+#btnCheck {
+    padding: 12px;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
+#btnCheck:hover {
+    background-color: black;
+}
+
+label {
+    font-size: 18px;
+    font-variant: small-caps;
+}
+
+#result {
+    font-size: 18px;
+    color: red;
+    margin-top: 16px;
+}
