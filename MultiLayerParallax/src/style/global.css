@@ -1,0 +1,45 @@
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parallax {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 4em;
+    letter-spacing: 20px;
+    font-family: fantasy;
+    color: white;
+}
+
+.intro {
+    background-image: url('/src/images/pexels-baskin-creative-studios-1766838.jpg');
+}
+
+.content1 {
+    background-image: url('/src/images/pexels-david-besh-884788.jpg');
+}
+
+.content2 {
+    background-image: url('/src/images/pexels-pixabay-36478.jpg');
+}
+
+.footer {
+    background-image: url('/src/images/pexels-pixabay-33109.jpg');
+}

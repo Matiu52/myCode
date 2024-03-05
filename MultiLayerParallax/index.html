@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Parallax</title>
+    <link rel="stylesheet" href="./src/style/global.css" />
+    <script type="text/javascript" src="/src/js/index.js"></script>
+</head>
+
+<body>
+    <div id="intro" class="parallax intro" onclick="scrollToElement('content1')">
+        <div class="cta">
+            <div class="cta title">
+                HELLO WORLD
+            </div>
+        </div>
+    </div>
+    <div id="content1" class="parallax content1" onclick="scrollToElement('content2')">
+        <div class="cta">
+            <div class="title">
+                HOW ARE YOU TODAY?
+            </div>
+        </div>
+    </div>
+    <div id="content2" class="parallax content2" onclick="scrollToElement('footer')">
+        <div class=" cta">
+            <div class="title">
+                ARE YOU OKAY?
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="parallax footer" onclick="scrollToElement('intro')">
+        <div class="cta">
+            <div class="cta title">
+                CREATED BY MATIU52
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
